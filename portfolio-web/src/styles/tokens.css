@@ -1,0 +1,48 @@
+/* ===== Design Tokens =====
+   Định nghĩa biến CSS dùng chung cho toàn bộ dự án.
+   Thay đổi ở đây sẽ ảnh hưởng toàn bộ giao diện.
+*/
+
+:root {
+  /* TODO: Định nghĩa color palette */
+  /* --color-bg-primary: ; */
+  /* --color-bg-secondary: ; */
+  /* --color-text-primary: ; */
+  /* --color-text-secondary: ; */
+  /* --color-accent: ; */
+  /* --color-accent-hover: ; */
+  /* --color-border: ; */
+  /* --color-error: ; */
+  /* --color-success: ; */
+
+  /* TODO: Typography */
+  /* --font-family-sans: ; */
+  /* --font-family-mono: ; */
+  /* --font-size-sm: ; */
+  /* --font-size-base: ; */
+  /* --font-size-lg: ; */
+  /* --font-size-xl: ; */
+  /* --font-size-2xl: ; */
+  /* --font-size-3xl: ; */
+
+  /* TODO: Spacing */
+  /* --space-xs: ; */
+  /* --space-sm: ; */
+  /* --space-md: ; */
+  /* --space-lg: ; */
+  /* --space-xl: ; */
+
+  /* TODO: Border radius */
+  /* --radius-sm: ; */
+  /* --radius-md: ; */
+  /* --radius-lg: ; */
+
+  /* TODO: Shadows */
+  /* --shadow-sm: ; */
+  /* --shadow-md: ; */
+  /* --shadow-lg: ; */
+
+  /* TODO: Layout */
+  /* --max-width: ; */
+  /* --header-height: ; */
+}
