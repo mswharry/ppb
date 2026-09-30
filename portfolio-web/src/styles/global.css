@@ -157,14 +157,106 @@ section {
    border-top: 1px solid #334155;
 }
 
+.main-navigation {
+   margin-left: auto;
+}
+
+.menu-button {
+   display: none;
+   width: 2.75rem;
+   height: 2.75rem;
+   padding: 0;
+   align-items: center;
+   justify-content: center;
+   color: #f8fafc;
+   background: transparent;
+   border: 1px solid #334155;
+   border-radius: 0.5rem;
+   cursor: pointer;
+   font-size: 1.5rem;
+}
+
+.menu-button:hover {
+   color: #38bdf8;
+   border-color: #38bdf8;
+}
+
+.menu-button:focus-visible {
+   outline: 3px solid #7dd3fc;
+   outline-offset: 3px;
+}
+
 @media (max-width: 640px) {
    .site-header__inner {
-      padding-block: 0.75rem;
-      align-items: flex-start;
+      min-height: 4rem;
+      padding-block: 0.6rem;
+      flex-wrap: wrap;
+   }
+
+   .menu-button {
+      display: inline-flex;
+      margin-left: auto;
+   }
+
+   .main-navigation {
+      display: none;
+      width: 100%;
+      margin-left: 0;
+   }
+
+   .main-navigation--open {
+      display: block;
+   }
+
+   .nav-list {
       flex-direction: column;
+      gap: 0;
+      padding-block: 0.75rem;
+   }
+
+   .nav-list a {
+      display: block;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #334155;
    }
 
    .project-grid {
       grid-template-columns: 1fr;
    }
+}
+
+.project-filters {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.75rem;
+   margin-bottom: 1.5rem;
+}
+
+.filter-button {
+   padding: 0.6rem 1rem;
+   color: #94a3b8;
+   background: transparent;
+   border: 1px solid #334155;
+   border-radius: 999px;
+   cursor: pointer;
+   transition:
+      color 150ms ease,
+      background-color 150ms ease,
+      border-color 150ms ease;
+}
+
+.filter-button:hover {
+   color: #f8fafc;
+   border-color: #38bdf8;
+}
+
+.filter-button:focus-visible {
+   outline: 3px solid #7dd3fc;
+   outline-offset: 3px;
+}
+
+.filter-button--active {
+   color: #0f172a;
+   background: #38bdf8;
+   border-color: #38bdf8;
 }

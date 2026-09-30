@@ -6,12 +6,26 @@
 // Dùng dữ liệu từ data/profile.ts
 import ProjectCard from '../components/ProjectCard'
 import { profile } from '../data/profile'
-import { projects } from '../data/projects'
+import {
+    projects,
+    type ProjectCategory,
+} from '../data/projects'
+import { useState } from 'react'
 
 type SkillListProps = {
     skills: string[]
 }
+type ProjectFilter = ProjectCategory | 'all'
 
+const projectFilters: Array<{
+    value: ProjectFilter
+    label: string
+}> = [
+        { value: 'all', label: 'Tất cả' },
+        { value: 'development', label: 'Development' },
+        { value: 'security', label: 'Security' },
+        { value: 'ctf', label: 'CTF' },
+    ]
 function SkillList({ skills }: SkillListProps) {
     return (
         <ul className="skill-list">
@@ -23,6 +37,10 @@ function SkillList({ skills }: SkillListProps) {
 }
 
 export default function HomePage() {
+    const [selectedCategory, setSelectedCategory] = useState<ProjectFilter>('all')
+    const visibleProjects = (selectedCategory === 'all' ?
+        projects : projects.filter(p => p.category === selectedCategory)
+    )
     return (
         <main id="home" className="container">
             <section className="hero">
@@ -53,8 +71,25 @@ export default function HomePage() {
             <section id="projects">
                 <h2>Dự án</h2>
 
+                <div className="project-filters" role="group" aria-label="Lọc dự án theo danh mục">
+                    {projectFilters.map((filter) => (
+                        <button
+                            className={selectedCategory === filter.value ?
+                                'filter-button filter-button--active'
+                                : 'filter-button'
+                            }
+                            key={filter.label}
+                            type="button"
+                            aria-pressed={selectedCategory === filter.value}
+                            onClick={() => setSelectedCategory(filter.value)}>
+                            {filter.label}
+                        </button>
+                    ))}
+
+                </div>
+
                 <div className="project-grid">
-                    {projects.map((project) => (
+                    {visibleProjects.map((project) => (
                         <ProjectCard
                             key={project.id}
                             title={project.title}
